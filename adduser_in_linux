@@ -1,0 +1,12 @@
+#!/usr/bin/pyhton3
+import os
+
+users = ["Alpha", "Beta", "Gamma"]
+
+for user in users:
+        exitcode=os.system(f"id {user}")
+        if exitcode != 0:
+                print(f"User {user} does not exist, adding the user {user}...")
+                os.system(f"useradd {user}")
+        else:
+                print(f"{user} user already exists, skipping addtion of {user}.")
